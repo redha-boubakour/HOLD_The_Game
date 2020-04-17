@@ -28,10 +28,6 @@ var scores, currentScore, activePlayer, gamePlaying, previousDice, winningScore;
 
 init();
 
-document.querySelector(".btn-ready").addEventListener("click", function () {
-  document.querySelector(".intro").style.visibility = "hidden";
-});
-
 document.querySelector(".btn-rollDice").addEventListener("click", function () {
   if (gamePlaying) {
     // Random number
@@ -54,10 +50,11 @@ document.querySelector(".btn-rollDice").addEventListener("click", function () {
         scores[activePlayer] = 0;
         document.querySelector(`#finalScore-${activePlayer}`).textContent = 0;
         nextPlayer();
+        document.querySelector(".dice").style.visibility = "hidden";
       }
       previousDice = dice;
     } else {
-      // Next player's
+      // Next player
       nextPlayer();
     }
   }
@@ -97,6 +94,7 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
       gamePlaying = false;
     } else {
       nextPlayer();
+      document.querySelector(".dice").style.visibility = "hidden";
     }
   }
 });
@@ -112,8 +110,6 @@ function nextPlayer() {
 
   document.querySelector(".player-0").classList.toggle("active");
   document.querySelector(".player-1").classList.toggle("active");
-
-  document.querySelector(".dice").style.visibility = "hidden";
 }
 
 function init() {
