@@ -183,3 +183,48 @@ main {
   font-weight: 500;
   font-size: 24px;
 }
+
+/* The media query */
+
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "#btn-help"
+      ".player-0"
+      ".menu"
+      ".player-1";
+    max-height: 100%;
+  }
+
+  #btn-help {
+    background-color: #2e282a;
+    color: whitesmoke;
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .player-name,
+  .player-score,
+  .player-current-box {
+    margin: 0;
+    padding: 0;
+  }
+
+  .active .player-name {
+    font-weight: unset;
+    font-size: unset;
+  }
+  .active .player-name::after {
+    content: "";
+    font-size: unset;
+    color: #eb4d4d;
+  }
+
+  .modal-content {
+    font-size: 10px;
+  }
+}
