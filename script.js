@@ -1,3 +1,29 @@
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var help = document.getElementById("btn-help");
+
+// Get the "ready button" that closes the modal
+var ready = document.getElementsByClassName("btn-ready")[0];
+
+// When the user clicks on the "help button", open the modal
+help.onclick = function () {
+  modal.style.display = "grid";
+};
+
+// When the user clicks on the "ready button", close the modal
+ready.onclick = function () {
+  modal.style.display = "";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "";
+  }
+};
+
 var scores, currentScore, activePlayer, gamePlaying, previousDice, winningScore;
 
 init();

@@ -1,3 +1,48 @@
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #db222a;
+  margin: 2% auto; /* 5% from the top and centered */
+  padding: 20px;
+  border-radius: 20px;
+  width: 85%; /* Could be more or less, depending on screen size */
+}
+
+#btn-help {
+  background-color: #2e282a;
+  color: whitesmoke;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 15px;
+  position: absolute;
+}
+
+/* The Close Button */
+.btn-ready {
+  background-color: #2e282a;
+  color: whitesmoke;
+  border-radius: 20px;
+  margin: 0 40%;
+  padding: 15px;
+}
+
+.close:hover,
+.close:focus {
+  color: whitesmoke;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -36,14 +81,6 @@ form {
   padding: 2% 5%;
 }
 
-.btn-ready {
-  background-color: #2e282a;
-  color: whitesmoke;
-  border-radius: 20px;
-  margin: 0 40%;
-  padding: 15px;
-}
-
 .inputFinalScore {
   padding: 5px;
   margin: 10px;
@@ -59,6 +96,7 @@ h1 {
 
 ul {
   text-align: justify;
+  font-size: 14px;
 }
 
 form {
