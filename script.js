@@ -2,6 +2,10 @@ var scores, currentScore, activePlayer, gamePlaying, previousDice, winningScore;
 
 init();
 
+document.querySelector(".btn-ready").addEventListener("click", function () {
+  document.querySelector(".intro").style.visibility = "hidden";
+});
+
 document.querySelector(".btn-rollDice").addEventListener("click", function () {
   if (gamePlaying) {
     // Random number
@@ -44,6 +48,16 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
       scores[activePlayer];
 
     // Check if one of the two players won the game
+
+    var input = document.querySelector(".inputFinalScore").value;
+    var winningScore;
+
+    if (input) {
+      winningScore = input;
+    } else {
+      winningScore = 100;
+    }
+
     if (scores[activePlayer] >= winningScore) {
       document.querySelector(`#name-${activePlayer}`).textContent =
         "THE WINNER !";

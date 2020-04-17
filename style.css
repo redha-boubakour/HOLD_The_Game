@@ -5,8 +5,64 @@ body {
   background-color: whitesmoke;
 }
 
-h1 {
+.intro {
+  background-color: #db222a;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  position: absolute;
+}
+
+.intro-container {
+  display: grid;
+  grid-template-columns: repeat(1fr, 3);
+  grid-template-rows: repeat(1fr, 4);
+  grid-template-areas:
+    ".    h1            ."
+    ".    ul            ."
+    ".    .form-input   ."
+    ".    .btn-ready    .";
   text-align: center;
+  align-items: center;
+}
+
+h1,
+ul,
+form {
+  background-color: whitesmoke;
+  border: whitesmoke solid;
+  border-radius: 20px;
+  margin: 2% 20%;
+  padding: 2% 5%;
+}
+
+.btn-ready {
+  background-color: #2e282a;
+  color: whitesmoke;
+  border-radius: 20px;
+  margin: 0 40%;
+  padding: 15px;
+}
+
+.inputFinalScore {
+  padding: 5px;
+  margin: 10px;
+}
+
+.inputFinalScore:focus {
+  outline: none;
+}
+
+h1 {
+  color: #db222a;
+}
+
+ul {
+  text-align: justify;
+}
+
+form {
+  display: grid;
 }
 
 main {
