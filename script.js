@@ -1,3 +1,9 @@
+var scores, currentScore, activePlayer, gamePlaying, previousDice, winningScore;
+
+init();
+
+// The help button (the rules button)
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -24,10 +30,6 @@ window.onclick = function (event) {
   }
 };
 
-var scores, currentScore, activePlayer, gamePlaying, previousDice, winningScore;
-
-init();
-
 document.querySelector(".btn-rollDice").addEventListener("click", function () {
   if (gamePlaying) {
     // Random number
@@ -40,7 +42,7 @@ document.querySelector(".btn-rollDice").addEventListener("click", function () {
 
     // Update the current score IF the rolled number isnt a 1
     if (dice !== 1) {
-      // Add the score
+      // Add the dice value to the current score
       currentScore += dice;
       document.querySelector(
         `#currentScore-${activePlayer}`
@@ -71,7 +73,6 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
       scores[activePlayer];
 
     // Check if one of the two players won the game
-
     var input = document.querySelector(".inputFinalScore").value;
     var winningScore;
 
@@ -91,6 +92,7 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
       document
         .querySelector(`.player-${activePlayer}`)
         .classList.remove("active");
+
       gamePlaying = false;
     } else {
       nextPlayer();
@@ -135,3 +137,5 @@ function init() {
   document.querySelector(`.player-1`).classList.remove("active");
   document.querySelector(`.player-0`).classList.add("active");
 }
+
+// NOTE : "hiding the dice" part is not in the "nextPlayer" function soo that he can still be visible after getting the 1 value.
