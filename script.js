@@ -30,6 +30,8 @@ window.onclick = function (event) {
   }
 };
 
+// the ROLE THE DICE button that generate a random value
+
 document.querySelector(".btn-rollDice").addEventListener("click", function () {
   if (gamePlaying) {
     // Random number
@@ -61,6 +63,8 @@ document.querySelector(".btn-rollDice").addEventListener("click", function () {
     }
   }
 });
+
+// The HOLD button that allows kipping the accumulated points and transfering them into the GLOBAL score
 
 document.querySelector(".btn-hold").addEventListener("click", function () {
   if (gamePlaying) {
@@ -103,6 +107,8 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
 
 document.querySelector(".btn-newGame").addEventListener("click", init);
 
+// toggling between the two players "IF"
+
 function nextPlayer() {
   activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
   currentScore = 0;
@@ -113,6 +119,8 @@ function nextPlayer() {
   document.querySelector(".player-0").classList.toggle("active");
   document.querySelector(".player-1").classList.toggle("active");
 }
+
+// initialise all the defaults values
 
 function init() {
   scores = [0, 0];
